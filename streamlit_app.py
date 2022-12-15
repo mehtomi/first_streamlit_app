@@ -49,10 +49,6 @@ except URLError as e:
 
 streamlit.write('The user entered ', fruit_choice)
 
-#katkaistaan koodi hetkeksi tähän
-streamlit.stop()
-
-
 streamlit.header("The fruit load list contains:")
 #Snowfale related functions
 def get_fruit_load_list():
@@ -65,6 +61,10 @@ if streamlit.button('Get Fruit Load List'):
       my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
       my_data_rows = get_fruit_load_list()
       streamlit.dataframe(my_data_rows)
+      
+#katkaistaan koodi hetkeksi tähän
+streamlit.stop()
+
 
 # Käyttäjä voi kirjoittaa toisen hedelmän
 # streamlit.header('What fruit would you like to add?')
