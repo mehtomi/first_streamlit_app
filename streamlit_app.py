@@ -57,7 +57,7 @@ streamlit.header("The fruit load list contains:")
 #Snowfale related functions
 def get_fruit_load_list():
       with my_cnx.cursor() as my_cur:
-      my_cur.execute("select * from FRUIT_LOAD_LIST")
+      my_cur.execute("select * from fruit_load_list")
       return my_cur.fetchall()
 
 #Add a button to load fruit load list
